@@ -1,0 +1,269 @@
+@font-face {
+    font-family: 'jaro'; /* Choose a custom name for your font */
+    src: url('../assets/fonts/Jaro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crimson Pro'; /* Choose a custom name for your font */
+    src: url('../assets/fonts/CrimsonPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crimson Pro';
+    src: url('../assets/fonts/CrimsonPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crimson Pro';
+    src: url('../assets/fonts/CrimsonPro-SemiBold.ttf') format('truetype');
+    font-weight: 600; /* SemiBold typically uses 600 */
+    font-style: normal;
+}
+
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #380103; /* Dark red background for the page */
+    font-family: 'jaro';
+}
+
+/* Wrapper to center content */
+.login_wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+/* Left-side: form section */
+.login_main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #380103; /* Slightly lighter red for contrast */
+    color: #E4E4E4; /* Light text color */
+}
+
+
+.login_welcome_to {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #B0B0B0;
+    font-family: 'Crimson Pro';
+    font-weight: 400;
+}
+
+.login_logo {
+    font-size: 112px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #B9615B;
+    text-transform: uppercase;
+}
+
+.login_text {
+    font-size: 20px;
+    margin: 15px 0;
+    font-family: 'Crimson Pro';
+    font-weight: 400;
+}
+
+.login_form {
+    width: 100%;
+    max-width: 582px;
+}
+
+.input_wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: #5B0000; /* Darker background for input fields */
+    padding: 20px;
+    border-radius: 22px;
+    color: #FFA0A0;
+    font-size: 20px;
+    font-family: 'Crimson Pro';
+    font-weight: 400;
+}
+
+/* Change placeholder color and size for various browsers */
+input::placeholder {
+    color: #FFA0A0;
+    font-size: 20px;
+}
+
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #FFA0A0;
+    font-size: 20px;
+}
+
+input::-ms-input-placeholder { /* Microsoft Edge */
+    color: #FFA0A0;
+    font-size: 20px;
+}
+
+input::-webkit-input-placeholder { /* WebKit browsers (Chrome, Safari) */
+    color: #FFA0A0;
+    font-size: 20px;
+}
+
+.input_wrapper img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.input_wrapper input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #f0d7d7;
+    font-size: 16px;
+}
+
+.submit_wrapper {
+    text-align: center;
+    margin: 20px 0;
+}
+
+button {
+    width: 100%;
+    padding: 16px 230px;
+    background-color: #C30005; /* Red for the button */
+    border: none;
+    border-radius: 15px;
+    color: #FFA9A1;
+    font-size: 32px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    font-family: 'Crimson Pro';
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: #e40000;
+}
+
+/* Sign up link */
+.signup_wrapper {
+    text-align: center;
+}
+
+.signup_link {
+    color: #FFB8BC;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+
+.signup_link:hover {
+    color: white;
+}
+
+/* Right-side: image section */
+.login_img_wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #400303; /* Background for the image section */
+    position: relative;
+    overflow: hidden;
+}
+
+.login_img_wrapper img {
+    max-width: 100%;
+    /* height: 100%; */
+    object-fit: cover;
+    opacity: 0.8; /* Slight transparency */
+}
+
+/* .login_img_wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #400303; /* Background for the image section */ /*
+    position: relative;
+    overflow: hidden;
+}
+
+.login_img_wrapper img {
+    width: 100%; /* Make the image take the full width */ /*
+    height: 100%; /* Make the image take the full height */ /*
+    object-fit: cover; /* Maintain aspect ratio and cover the area */ /*
+    opacity: 0.8; /* Slight transparency */ /*
+} */
+
+.login_actions_wrapper {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Crimson Pro';
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Checkbox style */
+.checkbox_wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #FFA0A0; /* Same color as inputs */
+    /* font-size: 20px; */
+}
+
+.checkbox_wrapper input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Slightly larger checkbox */
+}
+
+.checkbox_wrapper label {
+    color: #FFA0A0;
+}
+
+/* Forgot password link style */
+.forgot_password_wrapper {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.forgot_password_link {
+    color: #FFB8BC;
+    text-decoration: none;
+    /* font-size: 20px; */
+}
+
+.forgot_password_link:hover {
+    color: white;
+}
+
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+    .login_wrapper {
+        flex-direction: column;
+    }
+
+    .login_main {
+        flex: none;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .login_img_wrapper {
+        display: none; /* Hide image on smaller screens */
+    }
+}
