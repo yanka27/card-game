@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marvel Card Game</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <!-- Deck display -->
+    <div class="deck">
+      <span id="deck-count" class="deck-count">24</span> <!-- Deck count will be dynamic -->
+      <img src="../assets/card_deck.webp" alt="Player Card">
+    </div>
+
+    <!-- Game controls -->
+    <button id="give-up" class="action-btn">Give Up</button>
+
+    <!-- Status display -->
+    <div class="game-status">
+      <span id="waiting-text">Waiting for a player...</span>
+          </div>
+          <div class="footer">
+            <!-- Відображення стану здоров'я -->
+            <span id="health-display" class="health">Health: 100</span>
+            <!-- Кнопка Ready -->
+            <button id="ready" class="action-btn">Ready</button>
+        </div>
+        
+
+
+  <!-- Link to JavaScript for game logic -->
+  <script src="../js/game.js"></script>
+</body>
+</html>
