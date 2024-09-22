@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: url('../assets/img/lobby_background.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup {
+    background-color: rgba(73, 0, 1, 0.9);
+    width: 1000px;
+    height: 600px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.game-list {
+    margin-top: 20px;
+    
+}
+.game {
+    background-color: rgba(41, 0, 0, 0.9);
+    width: 1000px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.game-members {
+    text-align: right;
+}
+.game-name {
+    text-align: left;
+}
+
+
+.welcome-button-container {
+    text-align: right;
+    margin-top: 5px;
+}
+.welcome-button-container .button {
+    background-color: #490000;
+    color: white;
+    padding: 20px 40px;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 16px 0px #6C0303 inset;
+    transition: background-color 0.3s;
+}
+.button:hover {
+    background-color: #6C0303;
+}

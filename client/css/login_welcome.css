@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'jaro'; /* Choose a custom name for your font */
+    src: url('../assets/fonts/Jaro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crimson Pro'; /* Choose a custom name for your font */
+    src: url('../assets/fonts/CrimsonPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crimson Pro';
+    src: url('../assets/fonts/CrimsonPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Crimson Pro';
+    src: url('../assets/fonts/CrimsonPro-SemiBold.ttf') format('truetype');
+    font-weight: 600; /* SemiBold typically uses 600 */
+    font-style: normal;
+}
+
+html, body {
+    height: 100%;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: url('../assets/img/lobby_background.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup {
+    background-color: rgba(73, 0, 1, 0.9);
+    width: 1000px;
+    height: 600px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+.popup h1 {
+    font-size: 50px;
+    color: white;
+    font-family: "jaro";
+}
+.welcome-button-container {
+    text-align: right;
+    margin-top: 5px;
+}
+.welcome-button-container .button {
+    background-color: #490000;
+    color: white;
+    padding: 20px 40px;
+    font-size: 24px;
+    font-family: "jaro";
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 0px 16px 0px #6C0303 inset;
+    transition: background-color 0.3s;
+}
+.button:hover {
+    background-color: #6C0303;
+}

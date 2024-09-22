@@ -54,10 +54,9 @@ body, html {
     color: #E4E4E4; /* Light text color */
 }
 
-
 .login_welcome_to {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: -30px;
     color: #B0B0B0;
     font-family: 'Crimson Pro';
     font-weight: 400;
@@ -100,21 +99,25 @@ body, html {
 input::placeholder {
     color: #FFA0A0;
     font-size: 20px;
+    font-family: 'Crimson Pro'; /* Apply Crimson Pro font to placeholder */
 }
 
 input:-ms-input-placeholder { /* Internet Explorer 10+ */
     color: #FFA0A0;
     font-size: 20px;
+    font-family: 'Crimson Pro'; /* Apply Crimson Pro font */
 }
 
 input::-ms-input-placeholder { /* Microsoft Edge */
     color: #FFA0A0;
     font-size: 20px;
+    font-family: 'Crimson Pro'; /* Apply Crimson Pro font */
 }
 
 input::-webkit-input-placeholder { /* WebKit browsers (Chrome, Safari) */
     color: #FFA0A0;
     font-size: 20px;
+    font-family: 'Crimson Pro'; /* Apply Crimson Pro font */
 }
 
 .input_wrapper img {
@@ -130,6 +133,7 @@ input::-webkit-input-placeholder { /* WebKit browsers (Chrome, Safari) */
     outline: none;
     color: #f0d7d7;
     font-size: 16px;
+    font-family: 'Crimson Pro'; /* Apply Crimson Pro font to input text */
 }
 
 .submit_wrapper {
@@ -191,38 +195,12 @@ button:hover {
     opacity: 0.8; /* Slight transparency */
 }
 
-/* .login_img_wrapper {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #400303; /* Background for the image section */ /*
-    position: relative;
-    overflow: hidden;
-}
-
-.login_img_wrapper img {
-    width: 100%; /* Make the image take the full width */ /*
-    height: 100%; /* Make the image take the full height */ /*
-    object-fit: cover; /* Maintain aspect ratio and cover the area */ /*
-    opacity: 0.8; /* Slight transparency */ /*
-} */
-
-.login_actions_wrapper {
-    display: flex;
-    justify-content: space-between;
-    font-family: 'Crimson Pro';
-    font-size: 20px;
-    font-weight: 600;
-}
-
 /* Checkbox style */
 .checkbox_wrapper {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
     color: #FFA0A0; /* Same color as inputs */
-    /* font-size: 20px; */
 }
 
 .checkbox_wrapper input[type="checkbox"] {
@@ -237,19 +215,17 @@ button:hover {
 /* Forgot password link style */
 .forgot_password_wrapper {
     text-align: right;
-    margin-bottom: 15px;
+    margin-top: -35px;
 }
 
 .forgot_password_link {
     color: #FFB8BC;
     text-decoration: none;
-    /* font-size: 20px; */
 }
 
 .forgot_password_link:hover {
     color: white;
 }
-
 
 /* Media Queries for smaller screens */
 @media (max-width: 768px) {
@@ -266,124 +242,4 @@ button:hover {
     .login_img_wrapper {
         display: none; /* Hide image on smaller screens */
     }
-}
-/* 
-background-image: url('../assets/Game.webp');
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-height: 100vh; */
-
-.game-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-}
-
-.deck {
-    position: absolute;
-    top: 50%; /* Центруємо по вертикалі */
-    transform: translateY(-50%); /* Для точного вирівнювання по центру */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 10px;
-}
-
-.deck-count {
-    color: white;
-    font-size: 32px;
-    margin-bottom: 100px;
-}
-
-.action-btn {
-    position: absolute;
-    padding: 10px 20px;
-    background-color: #8b0000;
-    color: #FFE3E3;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s; /* Додає плавний перехід */
-}
-
-.action-btn:hover {
-    background-color: #FF2525; /* Колір при наведенні */
-}
-
-#give-up {
-    top: 20px;
-    right: 20px;
-    width: 180px;
-    height: 60px;
-    font-size: 28px;
-    background-color: #490000; /* Основний колір */
-    color: #FFE3E3; /* Колір тексту */
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    position: absolute;
-    transition: background-color 0.3s; /* Плавний перехід кольору */
-    box-shadow: inset 0 0 18px #6C0303; /* Внутрішня тінь */
-}
-
-#give-up:hover {
-    background-color: #FF2525; /* Колір при наведенні */
-}
-
-
-.deck img {
-    position: absolute;
-    left: 0px;
-}
-
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px 20px;
-    background: linear-gradient(to bottom, #4F0505, #440303); /* Вертикальний градієнт */
-    position: fixed; /* Фіксуємо футер внизу */
-    bottom: 0;
-    left: 0;
-    height: 80px; /* Висота футера */
-    color: #FFE3E3;
-    z-index: 10; /* Підвищений індекс для поверхневого розташування */
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-}
-
-.health {
-    font-size: 28px;
-    font-weight: bold;
-    color: #F2C629;
-    text-shadow: 0 4px 12px rgba(70, 55, 0, 0.8);
-}
-
-#ready {
-    width: 180px;
-    height: 60px;
-    right: 50px;
-    font-size: 28px;
-    background-color: #490000;
-    color: #FFE3E3;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    box-shadow: inset 0 0 18px #6C0303;
-}
-
-#ready:hover {
-    background-color: #FF2525;
-}
-
-#waiting-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    color: #fff;
 }

@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       player2Deck.forEach((card, index) => {
         setTimeout(() => {
           const cardImg = document.createElement("img");
-          cardImg.src = `../assets${card}`;
+          cardImg.src = `../path/to/cards/${card}`;
           cardImg.classList.add("dealt");
           player2Cards.appendChild(cardImg);
         }, index * 200); // Add delay for animation
