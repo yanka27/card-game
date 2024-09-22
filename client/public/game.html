@@ -87,136 +87,135 @@
 
     <script>
       const playerCards = document.querySelectorAll('#player-hand .card');
-const playerSlot = document.getElementById('player-slot');
-const playerHand = document.getElementById('player-hand');
+      const playerSlot = document.getElementById('player-slot');
+      const playerHand = document.getElementById('player-hand');
 
-let draggedCard = null;
-let originalCard = null; // Store the original card in the slot
-let freezeTimeout; // Stores the freeze timeout
-let countdownInterval; // Stores the countdown interval
+      let draggedCard = null;
+      let originalCard = null; // Store the original card in the slot
+      let freezeTimeout; // Stores the freeze timeout
+      let countdownInterval; // Stores the countdown interval
 
-// Create a countdown display
-const countdownText = document.createElement('div');
-countdownText.classList.add('countdown-text');
-countdownText.style.position = 'absolute';
-countdownText.style.top = '10px';
-countdownText.style.left = '50%';
-countdownText.style.transform = 'translateX(-50%)';
-countdownText.style.backgroundColor = 'rgba(0,0,0,0.7)';
-countdownText.style.color = 'white';
-countdownText.style.padding = '5px 10px';
-countdownText.style.borderRadius = '5px';
-countdownText.style.fontSize = '14px';
-countdownText.style.visibility = 'hidden'; // Hidden until a card is dropped
-playerSlot.appendChild(countdownText); // Add countdown text to the player slot
+      // Create a countdown display
+      const countdownText = document.createElement('div');
+      countdownText.classList.add('countdown-text');
+      countdownText.style.position = 'absolute';
+      countdownText.style.top = '10px';
+      countdownText.style.left = '50%';
+      countdownText.style.transform = 'translateX(-50%)';
+      countdownText.style.backgroundColor = 'rgba(0,0,0,0.7)';
+      countdownText.style.color = 'white';
+      countdownText.style.padding = '5px 10px';
+      countdownText.style.borderRadius = '5px';
+      countdownText.style.fontSize = '14px';
+      countdownText.style.visibility = 'hidden'; // Hidden until a card is dropped
+      playerSlot.appendChild(countdownText); // Add countdown text to the player slot
 
-// Drag start
-playerCards.forEach(card => {
-  card.addEventListener('dragstart', (e) => {
-    if (card.classList.contains('frozen')) return; // Prevent dragging if the card is frozen
-    draggedCard = card; // Reference to the card
-    setTimeout(() => {
-      draggedCard.classList.add('dragging');
-    }, 0);
-  });
+      // Drag start
+      playerCards.forEach(card => {
+        card.addEventListener('dragstart', (e) => {
+          if (card.classList.contains('frozen')) return; // Prevent dragging if the card is frozen
+          draggedCard = card; // Reference to the card
+          setTimeout(() => {
+            draggedCard.classList.add('dragging');
+          }, 0);
+        });
 
-  card.addEventListener('dragend', () => {
-    if (draggedCard) {
-      draggedCard.classList.remove('dragging');
-      draggedCard = null;
-    }
-  });
-});
+        card.addEventListener('dragend', () => {
+          if (draggedCard) {
+            draggedCard.classList.remove('dragging');
+            draggedCard = null;
+          }
+        });
+      });
 
-// Player slot events
-playerSlot.addEventListener('dragover', (e) => {
-  e.preventDefault();
-});
+      // Player slot events
+      playerSlot.addEventListener('dragover', (e) => {
+        e.preventDefault();
+      });
 
-playerSlot.addEventListener('drop', (e) => {
-  e.preventDefault();
-  
-  if (draggedCard) {
-    if (playerSlot.hasChildNodes()) {
-      const cardInSlot = playerSlot.firstChild;
-      if (cardInSlot.classList.contains('frozen')) {
-        // If the card in the slot is frozen, prevent replacing it
-        return;
-      }
-      
-      // Replace existing card only if it's not frozen
-      originalCard = playerSlot.firstChild;
-      playerHand.appendChild(originalCard); // Move old card back to hand
-      originalCard.style.width = '160px'; // Restore size for hand
-      originalCard.style.height = '210px';
-    }
-    
-    playerSlot.appendChild(draggedCard); // Place new card in slot
-    draggedCard.style.width = '180px'; // Size for play area
-    draggedCard.style.height = '230px';
+      playerSlot.addEventListener('drop', (e) => {
+        e.preventDefault();
+        
+        if (draggedCard) {
+          if (playerSlot.hasChildNodes()) {
+            const cardInSlot = playerSlot.firstChild;
+            if (cardInSlot.classList.contains('frozen')) {
+              // If the card in the slot is frozen, prevent replacing it
+              return;
+            }
+            
+            // Replace existing card only if it's not frozen
+            originalCard = playerSlot.firstChild;
+            playerHand.appendChild(originalCard); // Move old card back to hand
+            originalCard.style.width = '160px'; // Restore size for hand
+            originalCard.style.height = '210px';
+          }
+          
+          playerSlot.appendChild(draggedCard); // Place new card in slot
+          draggedCard.style.width = '180px'; // Size for play area
+          draggedCard.style.height = '230px';
 
-    // Set timer to freeze the card after 5 seconds
-    countdownText.style.visibility = 'visible'; // Show the countdown text
-    let countdown = 5;
-    countdownText.textContent = `You can change this card in ${countdown} seconds`;
-    
-    countdownInterval = setInterval(() => {
-      countdown -= 1;
-      if (countdown > 0) {
-        countdownText.textContent = `You can change this card in ${countdown} seconds`;
-      } else {
-        countdownText.textContent = "Card is now locked!";
-        clearInterval(countdownInterval); // Stop the countdown
-      }
-    }, 1000); // Update every second
-    
-    freezeTimeout = setTimeout(() => {
-      draggedCard.classList.add('frozen'); // Make the card undragable
-      draggedCard.style.opacity = '1'; // Full visibility
-      countdownText.style.visibility = 'hidden'; // Hide the countdown after freezing
-    }, 5000); // Freeze after 5 seconds
-  }
-});
+          // Set timer to freeze the card after 5 seconds
+          countdownText.style.visibility = 'visible'; // Show the countdown text
+          let countdown = 5;
+          countdownText.textContent = `You can change this card in ${countdown} seconds`;
+          
+          countdownInterval = setInterval(() => {
+            countdown -= 1;
+            if (countdown > 0) {
+              countdownText.textContent = `You can change this card in ${countdown} seconds`;
+            } else {
+              countdownText.textContent = "Card is now locked!";
+              clearInterval(countdownInterval); // Stop the countdown
+            }
+          }, 1000); // Update every second
+          
+          freezeTimeout = setTimeout(() => {
+            draggedCard.classList.add('frozen'); // Make the card undragable
+            draggedCard.style.opacity = '1'; // Full visibility
+            countdownText.style.visibility = 'hidden'; // Hide the countdown after freezing
+          }, 5000); // Freeze after 5 seconds
+        }
+      });
 
-// Allow cards to be dragged back to the hand from the player slot
-playerSlot.addEventListener('dragover', (e) => {
-  e.preventDefault();
-});
+      // Allow cards to be dragged back to the hand from the player slot
+      playerSlot.addEventListener('dragover', (e) => {
+        e.preventDefault();
+      });
 
-playerSlot.addEventListener('drop', (e) => {
-  e.preventDefault();
-  if (originalCard && !originalCard.classList.contains('frozen')) {
-    // Remove the card from the slot and return to hand
-    playerHand.appendChild(originalCard);
-    originalCard.style.width = '160px'; // Restore size for hand
-    originalCard.style.height = '210px';
-    originalCard.classList.remove('dragging'); // Remove dragging class
-    originalCard = null;
-    countdownText.style.visibility = 'hidden'; // Hide the countdown if the card is removed
-    clearTimeout(freezeTimeout); // Stop the freeze timeout
-    clearInterval(countdownInterval); // Stop the countdown interval
-  }
-});
+      playerSlot.addEventListener('drop', (e) => {
+        e.preventDefault();
+        if (originalCard && !originalCard.classList.contains('frozen')) {
+          // Remove the card from the slot and return to hand
+          playerHand.appendChild(originalCard);
+          originalCard.style.width = '160px'; // Restore size for hand
+          originalCard.style.height = '210px';
+          originalCard.classList.remove('dragging'); // Remove dragging class
+          originalCard = null;
+          countdownText.style.visibility = 'hidden'; // Hide the countdown if the card is removed
+          clearTimeout(freezeTimeout); // Stop the freeze timeout
+          clearInterval(countdownInterval); // Stop the countdown interval
+        }
+      });
 
-// Allow cards to be dragged back to the hand
-playerHand.addEventListener('dragover', (e) => {
-  e.preventDefault();
-});
+      // Allow cards to be dragged back to the hand
+      playerHand.addEventListener('dragover', (e) => {
+        e.preventDefault();
+      });
 
-playerHand.addEventListener('drop', (e) => {
-  e.preventDefault();
-  if (draggedCard && !draggedCard.classList.contains('frozen')) {
-    playerHand.appendChild(draggedCard);
-    draggedCard.style.width = '160px'; // Restore size for hand
-    draggedCard.style.height = '210px';
-    draggedCard.classList.remove('dragging'); // Remove dragging class
-    draggedCard = null;
-    countdownText.style.visibility = 'hidden'; // Hide the countdown if the card is removed
-    clearTimeout(freezeTimeout); // Stop the freeze timeout
-    clearInterval(countdownInterval); // Stop the countdown interval
-  }
-});
-      
+      playerHand.addEventListener('drop', (e) => {
+        e.preventDefault();
+        if (draggedCard && !draggedCard.classList.contains('frozen')) {
+          playerHand.appendChild(draggedCard);
+          draggedCard.style.width = '160px'; // Restore size for hand
+          draggedCard.style.height = '210px';
+          draggedCard.classList.remove('dragging'); // Remove dragging class
+          draggedCard = null;
+          countdownText.style.visibility = 'hidden'; // Hide the countdown if the card is removed
+          clearTimeout(freezeTimeout); // Stop the freeze timeout
+          clearInterval(countdownInterval); // Stop the countdown interval
+        }
+      });
     </script>
   </body>
   </html>

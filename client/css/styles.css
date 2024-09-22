@@ -31,7 +31,6 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Arial', sans-serif;
     background-color: #380103; /* Dark red background for the page */
     font-family: 'jaro';
 }
@@ -163,7 +162,6 @@ button:hover {
 .signup_link {
     color: #FFB8BC;
     text-decoration: none;
-    font-weight: bold;
     transition: color 0.3s ease;
     font-weight: 600;
 }
@@ -189,23 +187,6 @@ button:hover {
     object-fit: cover;
     opacity: 0.8; /* Slight transparency */
 }
-
-/* .login_img_wrapper {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #400303; /* Background for the image section */ /*
-    position: relative;
-    overflow: hidden;
-}
-
-.login_img_wrapper img {
-    width: 100%; /* Make the image take the full width */ /*
-    height: 100%; /* Make the image take the full height */ /*
-    object-fit: cover; /* Maintain aspect ratio and cover the area */ /*
-    opacity: 0.8; /* Slight transparency */ /*
-} */
 
 .login_actions_wrapper {
     display: flex;
@@ -266,12 +247,6 @@ button:hover {
         display: none; /* Hide image on smaller screens */
     }
 }
-/* 
-background-image: url('../assets/Game.webp');
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-height: 100vh; */
 
 .game-container {
     position: relative;
@@ -334,7 +309,7 @@ height: 100vh; */
 
 .deck img {
     position: absolute;
-    left: 0px;
+    left: 0;
 }
 
 .footer {
@@ -396,7 +371,6 @@ height: 100vh; */
     align-items: center;
     padding: 10px 40px;
 
-    /* background-color: #3a1414; */
   }
   
   #opponent-info {
@@ -423,15 +397,7 @@ height: 100vh; */
   .action-btn:hover {
     background-color: #e35b5b;
   }
-/*   
-  .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    margin: 20px 0;
-  } */
-  
+
   #game-board {
     display: flex;
     justify-content: space-between;
@@ -448,14 +414,6 @@ height: 100vh; */
     min-width: 420px;
     margin-top: -100px;
   }
-  
-  /* .center-slot {
-    width: 100px;
-    height: 150px;
-    border: 2px dashed white;
-    transition: transform 0.3s ease;
-    margin-bottom: 20px;
-  } */
   
   #player-hand {
     display: flex;
@@ -499,14 +457,6 @@ height: 100vh; */
     align-items: center;
   }
   
-  /* #footer-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #3a1414;
-    padding: 0px 40px;
-  } */
-  
   #player-info {
     display: flex;
     align-items: center;
@@ -526,13 +476,6 @@ height: 100vh; */
     margin-bottom: 20px;
     flex-wrap: wrap;  /* Allows cards to be flexible */
   }
-  
-  /* .card {
-    width: 100px;
-    height: 140px;
-    cursor: grab;
-    transition: transform 0.2s ease;
-  } */
   
   .card.dragging {
     opacity: 0.5;
@@ -570,25 +513,11 @@ height: 100vh; */
     width: 75px;
     height: 75px;
 }
-
-/* .card {
-    width: 100px;
-    height: 140px;
-    cursor: grab;
-    transition: transform 0.2s ease;  /* Adjusts the scaling effect */
- /* } */
   
   .card.dragging {
     opacity: 0.5;
     transform: scale(1.1);  /* Enlarges the card when dragging */
   }
-
-/* .wrapper {
-    flex: 1; /* Allow this section to grow and fill available space */
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-} */ 
 
 #footer-section {
     flex: 0 0 auto; /* Do not grow or shrink, take only its content size */
@@ -642,32 +571,6 @@ height: 100vh; */
 .discard_pile {
     right: 0;
 }
-
-
-.timer {
-    position: absolute;
-    border: 5px solid green; /* Green border for the countdown */
-    width: 180px; /* Match the width of the card in the play area */
-    height: 230px; /* Match the height of the card in the play area */
-    animation: countdown 5s linear forwards; /* Duration matches the countdown time */
-    opacity: 1; /* Fully visible initially */
-    pointer-events: none; /* Disable interactions */
-  }
-  
-  @keyframes countdown {
-    0% {
-      transform: scale(1); /* Start at full size */
-    }
-    100% {
-      transform: scale(0); /* Shrink to 0 size */
-      opacity: 0; /* Fade out */
-    }
-  }
-
-/* .card.frozen {
-    opacity: 1; /* Fully visible after timer ends */
-   /* pointer-events: none; /* Disable interactions */
- /* } */
 
  .countdown-text {
     position: absolute;
