@@ -20,15 +20,16 @@
                     Log into your account and start playing!
                 </span>
 
-                <form action="" class="login_form">
+                <form id="loginForm" action="" class="login_form" novalidate>
                     <div class="input_wrapper">
                         <img src="../assets/icons/username_icon.png" alt="user icon">
                         <input type="text" placeholder="Username" required>
                     </div>
                     <div class="input_wrapper">
                         <img src="../assets/icons/password_icon.png" alt="password icon">
-                        <input type="password" placeholder="Password" required>
+                        <input type="password" id="password" placeholder="Password" required>
                     </div>
+                    <div class="error_message" id="passwordError" style="margin-top: 160px; margin-left: 250px; display: none;"></div>
 
                     <div class="login_actions_wrapper">
                         <!-- Stay logged in checkbox -->
@@ -36,24 +37,21 @@
                             <input type="checkbox" id="stay_logged_in">
                             <label for="stay_logged_in">Stay logged in</label>
                         </div>
-
-                        <!-- Forgot password link -->
-                        <div class="forgot_password_wrapper">
-                            <a href="#" class="forgot_password_link">Forgot password?</a>
-                        </div>
                     </div>
 
-                    <div class="submit_wrapper">
+                    <div class="signin_wrapper">
                         <button type="submit" style="text-transform: uppercase;"> 
                             Sign in
                         </button>
                     </div>
                     <div class="signup_wrapper">
-                        <span class="login_text">
+                        <span class="signup_text">
                             Don’t have an account? 
-                               
                             <a class="signup_link" href="./registration.html"> Sign Up </a>
                         </span>
+                    </div>
+                    <div class="forgot_password_wrapper">
+                        <a href="reset_password.html" class="forgot_password_link">Forgot password?</a>
                     </div>
                 </form>
             </div>
@@ -62,5 +60,7 @@
             </div>
         </div>
     </main>
+
+    <script src="../js/error.js"></script>
 </body>
 </html>

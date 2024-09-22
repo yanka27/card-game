@@ -20,7 +20,7 @@
                     Create an account and start playing!
                 </span>
 
-                <form action="" class="login_form">
+                <form id="loginForm" action="" class="login_form" novalidate>
                     <div class="input_wrapper">
                         <img src="../assets/icons/username_icon.png" alt="user icon">
                         <input type="text" placeholder="Full Name" required>
@@ -28,17 +28,21 @@
 
                     <div class="input_wrapper">
                         <img src="../assets/icons/email_icon.png" alt="email icon" width="20px">
-                        <input type="email" placeholder="Email" required>
+                        <input type="email" id="email" placeholder="Email" required>
                     </div>
+                    <div class="signup_error_message" id="emailError"></div>
 
                     <div class="input_wrapper">
                         <img src="../assets/icons/password_icon.png" alt="password icon">
-                        <input type="password" placeholder="Password" required>
+                        <input type="password" id="password" placeholder="Password" required>
                     </div>
+                    <div class="signup_error_message" id="passwordError"></div>
+
                     <div class="input_wrapper">
                         <img src="../assets/icons/password_icon.png" alt="password icon">
                         <input type="password" placeholder="Confirm password" required>
                     </div>
+
                     <div class="submit_wrapper">
                         <button type="submit" style="text-transform: uppercase;"> 
                             Sign up
@@ -47,7 +51,7 @@
                     <div class="signup_wrapper">
                         <span class="login_text">
                             Already have an account?  
-                            <a class="signup_link" href="./login.html"> Sign In </a>
+                            <a class="signin_link" href="./login.html"> Sign In </a>
                         </span>
                     </div>
                 </form>
@@ -57,5 +61,7 @@
             </div>
         </div>
     </main>
+
+    <script src="../js/error.js"></script>
 </body>
 </html>
